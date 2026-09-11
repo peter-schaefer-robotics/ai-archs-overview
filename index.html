@@ -1,0 +1,1532 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A reference table of 69 AI model architectures from the 1943 McCulloch-Pitts neuron to the 2026 frontier, with a timeline of the 23 biggest milestones and a source for every entry.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="Perceptron to World Models">
+<meta property="og:description" content="69 AI model architectures in the order they arrived, with the 23 biggest milestones on a timeline and a citable source for every row.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%A7%A0</text></svg>">
+<style>
+:root{color-scheme:light dark}
+body{margin:0;font-family:system-ui,-apple-system,sans-serif;font-size:14px}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<title>Perceptron to World Models</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600&display=swap">
+
+<style>
+:root{
+  --paper:#F1F4F3;
+  --surface:#FFFFFF;
+  --surface-2:#E6EBEA;
+  --ink:#131C1B;
+  --ink-2:#4A5C5A;
+  --ink-3:#7A8B89;
+  --line:#D3DCDA;
+  --line-strong:#A9B9B6;
+  --line-soft:#E3EAE8;
+  --accent:#0E6157;
+  --accent-ink:#0E6157;
+  --accent-soft:#DCEAE6;
+  --pos:#1E6B48;
+  --neg:#A2422F;
+  --e1:#77838F;
+  --e2:#4E77A0;
+  --e3:#2A8A82;
+  --e4:#8A8F31;
+  --e5:#C0812B;
+  --e6:#B0503F;
+  --shadow:0 1px 2px rgba(19,28,27,.06), 0 8px 24px -16px rgba(19,28,27,.28);
+  --fs-body:0.9375rem;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0D1312;
+    --surface:#141C1B;
+    --surface-2:#1C2625;
+    --ink:#E5EDEB;
+    --ink-2:#A6B8B5;
+    --ink-3:#788B88;
+    --line:#283534;
+    --line-strong:#445755;
+    --line-soft:#1F2B2A;
+    --accent:#4FC0AE;
+    --accent-ink:#68D0BF;
+    --accent-soft:#14302C;
+    --pos:#66BE8C;
+    --neg:#E08C74;
+    --e1:#9AA5B1;
+    --e2:#7FA6CD;
+    --e3:#4FBDB2;
+    --e4:#C3C95F;
+    --e5:#E3AC5C;
+    --e6:#E08877;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0D1312;
+  --surface:#141C1B;
+  --surface-2:#1C2625;
+  --ink:#E5EDEB;
+  --ink-2:#A6B8B5;
+  --ink-3:#788B88;
+  --line:#283534;
+  --line-strong:#445755;
+  --line-soft:#1F2B2A;
+  --accent:#4FC0AE;
+  --accent-ink:#68D0BF;
+  --accent-soft:#14302C;
+  --pos:#66BE8C;
+  --neg:#E08C74;
+  --e1:#9AA5B1;
+  --e2:#7FA6CD;
+  --e3:#4FBDB2;
+  --e4:#C3C95F;
+  --e5:#E3AC5C;
+  --e6:#E08877;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.7);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:var(--fs-body);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap{
+  max-width:1640px;
+  margin:0 auto;
+  padding-inline:clamp(16px,3vw,40px);
+  padding-block:clamp(28px,4vw,56px) 64px;
+}
+
+/* ---------- header ---------- */
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.6875rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+  margin:0 0 14px;
+}
+h1{
+  font-family:"IBM Plex Serif",Georgia,serif;
+  font-weight:600;
+  font-size:clamp(2rem,4.6vw,3.1rem);
+  line-height:1.08;
+  letter-spacing:-.015em;
+  margin:0 0 18px;
+  text-wrap:balance;
+  max-width:16ch;
+}
+h1 em{font-style:normal;color:var(--accent-ink)}
+.standfirst{
+  margin:0;
+  max-width:64ch;
+  font-size:1.0625rem;
+  line-height:1.62;
+  color:var(--ink-2);
+}
+.standfirst strong{color:var(--ink);font-weight:600}
+.meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 22px;
+  margin-top:22px;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.75rem;
+  color:var(--ink-3);
+  letter-spacing:.02em;
+}
+.meta b{color:var(--ink-2);font-weight:500}
+
+/* ---------- era band ---------- */
+.band{
+  margin-top:26px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding-block:18px;
+}
+.band-head{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+}
+.band-title{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.6875rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+}
+.band-hint{font-size:.8125rem;color:var(--ink-3)}
+.eras{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:10px;
+}
+/* Era hues are assigned by class, never by an inline custom property:
+   Safari does not reliably resolve style.setProperty('--hue','var(--e3)'),
+   and a var() that fails at computed-value time wipes the whole declaration. */
+.hue1{--hue:#77838F}
+.hue2{--hue:#4E77A0}
+.hue3{--hue:#2A8A82}
+.hue4{--hue:#8A8F31}
+.hue5{--hue:#C0812B}
+.hue6{--hue:#B0503F}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .hue1{--hue:#9AA5B1}
+  :root:not([data-theme="light"]) .hue2{--hue:#7FA6CD}
+  :root:not([data-theme="light"]) .hue3{--hue:#4FBDB2}
+  :root:not([data-theme="light"]) .hue4{--hue:#C3C95F}
+  :root:not([data-theme="light"]) .hue5{--hue:#E3AC5C}
+  :root:not([data-theme="light"]) .hue6{--hue:#E08877}
+}
+:root[data-theme="dark"] .hue1{--hue:#9AA5B1}
+:root[data-theme="dark"] .hue2{--hue:#7FA6CD}
+:root[data-theme="dark"] .hue3{--hue:#4FBDB2}
+:root[data-theme="dark"] .hue4{--hue:#C3C95F}
+:root[data-theme="dark"] .hue5{--hue:#E3AC5C}
+:root[data-theme="dark"] .hue6{--hue:#E08877}
+
+.era{
+  -webkit-appearance:none;
+  appearance:none;
+  position:relative;
+  display:block;
+  width:100%;
+  margin:0;
+  padding:0;
+  text-align:left;
+  font:inherit;
+  color:var(--ink-2);
+  background-color:var(--surface);
+  border:1.5px solid var(--line-strong);
+  border-radius:7px;
+  cursor:pointer;
+  box-shadow:0 1px 0 rgba(19,28,27,.06);
+  transition:border-color .15s ease, background-color .15s ease, box-shadow .15s ease;
+}
+.era::before{
+  content:"";
+  position:absolute;
+  top:0; right:0; bottom:0; left:0;
+  border-radius:5px;
+  background-color:var(--hue);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .15s ease;
+}
+.era:active{transform:translateY(1px)}
+.era .rule{
+  display:block;
+  position:relative;
+  height:5px;
+  border-radius:5px 5px 0 0;
+  background-color:var(--hue);
+}
+.era-inner{display:block;position:relative;padding:9px 28px 10px 11px}
+.era:hover{border-color:var(--hue);box-shadow:0 1px 3px rgba(19,28,27,.12)}
+.era:hover::before{opacity:.07}
+.era.on{border-color:var(--hue);box-shadow:inset 0 0 0 1px var(--hue)}
+.era.on::before{opacity:.14}
+.era-tick{
+  position:absolute;
+  right:10px;
+  top:18px;
+  z-index:1;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  border:2px solid var(--line-strong);
+  background-color:transparent;
+  transition:background-color .15s ease, border-color .15s ease;
+}
+.era:hover .era-tick{border-color:var(--hue)}
+.era.on .era-tick{
+  background-color:var(--hue);
+  border-color:var(--hue);
+  box-shadow:inset 0 0 0 2px var(--surface);
+}
+.era-name{
+  display:block;
+  font-size:.8125rem;
+  font-weight:600;
+  line-height:1.25;
+  color:var(--ink);
+}
+.era.dim{opacity:.55}
+.era-years{
+  display:block;
+  margin-top:3px;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.6875rem;
+  color:var(--ink-3);
+  letter-spacing:.02em;
+}
+.era-count{color:var(--hue);font-weight:600}
+
+/* ---------- timeline ---------- */
+.tl{margin-top:38px}
+.tl-off{display:none}
+.tl-scroll{
+  overflow-x:auto;
+  border:1px solid var(--line);
+  border-radius:6px;
+  background:var(--surface);
+  box-shadow:var(--shadow);
+  padding:6px 2px;
+}
+.tl-scroll svg{display:block;width:100%;min-width:940px;height:auto}
+.tl-node{cursor:pointer}
+.tl-node .tl-dot{transition:r .15s ease}
+.tl-node:hover .tl-dot,.tl-node:focus-visible .tl-dot{r:7.5}
+.tl-node:hover .tl-name{text-decoration:underline;text-underline-offset:3px}
+.tl-name{font-family:"IBM Plex Sans",sans-serif;font-size:12.5px;font-weight:600}
+.tl-year{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.05em}
+.tl-axis{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.08em}
+.tl-node:focus-visible{outline:none}
+.tl-node:focus-visible .tl-name{text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- controls ---------- */
+.controls{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:10px;
+  margin:22px 0 18px;
+}
+.search{
+  flex:1 1 280px;
+  min-width:0;
+  position:relative;
+}
+.search input{
+  width:100%;
+  font:inherit;
+  font-size:.9375rem;
+  color:var(--ink);
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:4px;
+  padding:9px 12px 9px 34px;
+}
+.search input::placeholder{color:var(--ink-3)}
+.search svg{
+  position:absolute;left:11px;top:50%;transform:translateY(-50%);
+  width:14px;height:14px;stroke:var(--ink-3);fill:none;stroke-width:2;
+}
+button.btn{
+  appearance:none;
+  font:inherit;
+  font-size:.8125rem;
+  font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:4px;
+  padding:9px 14px;
+  cursor:pointer;
+  white-space:nowrap;
+}
+button.btn:hover{color:var(--ink);border-color:var(--ink-3)}
+.count{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.75rem;
+  color:var(--ink-3);
+  margin-left:auto;
+}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* ---------- table ---------- */
+.scroller{
+  overflow-x:auto;
+  border:1px solid var(--line);
+  border-radius:6px;
+  background:var(--surface);
+  box-shadow:var(--shadow);
+}
+table{
+  border-collapse:collapse;
+  width:100%;
+  min-width:1500px;
+  font-size:.8125rem;
+  line-height:1.5;
+}
+thead th{
+  position:sticky;
+  top:0;
+  z-index:2;
+  background:var(--surface-2);
+  color:var(--ink-2);
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.625rem;
+  font-weight:500;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  text-align:left;
+  padding:11px 14px;
+  border-bottom:1px solid var(--line);
+  white-space:nowrap;
+}
+tbody td{
+  padding:13px 14px;
+  vertical-align:top;
+  border-bottom:1px solid var(--line-soft);
+}
+tbody tr:hover td{background:var(--accent-soft)}
+tr.era-row td{
+  background:var(--paper);
+  border-bottom:1px solid var(--line);
+  border-top:1px solid var(--line);
+  padding:9px 14px;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.6875rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--hue);
+  font-weight:600;
+}
+tr.era-row:hover td{background:var(--paper)}
+tr.era-row span{color:var(--ink-3);font-weight:400;letter-spacing:.06em}
+
+td.c-year{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-variant-numeric:tabular-nums;
+  font-size:.8125rem;
+  color:var(--ink-2);
+  white-space:nowrap;
+  border-left:3px solid var(--hue);
+  padding-left:11px;
+}
+.abbr{
+  font-weight:600;
+  font-size:.875rem;
+  color:var(--ink);
+  display:block;
+  letter-spacing:-.005em;
+}
+.star{color:var(--hue);margin-right:5px;font-size:.75em;vertical-align:.12em}
+.c-src a{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.6875rem;
+  line-height:1.35;
+  color:var(--ink-2);
+  text-decoration:none;
+  border-bottom:1px solid var(--line);
+  display:inline-block;
+}
+.c-src a:hover{color:var(--accent-ink);border-bottom-color:var(--accent)}
+.c-src a::after{content:" \2197";color:var(--ink-3)}
+button.btn.on{
+  background:var(--accent-soft);
+  border-color:var(--accent);
+  color:var(--accent-ink);
+}
+.full{
+  display:block;
+  color:var(--ink-3);
+  font-size:.75rem;
+  line-height:1.4;
+  margin-top:2px;
+}
+.ex{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px}
+.ex li{line-height:1.35}
+.ex b{font-weight:600;color:var(--ink)}
+.ex span{
+  display:block;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.6875rem;
+  color:var(--ink-3);
+}
+.sign{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-weight:600;
+  margin-right:5px;
+}
+.c-pro .sign{color:var(--pos)}
+.c-con .sign{color:var(--neg)}
+.empty{padding:44px 16px;text-align:center;color:var(--ink-3)}
+
+/* ---------- notes ---------- */
+.notes{
+  margin-top:44px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:28px 44px;
+}
+.notes h2{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.6875rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+  font-weight:500;
+  margin:0 0 12px;
+  padding-bottom:8px;
+  border-bottom:1px solid var(--line);
+}
+.notes p{margin:0 0 10px;color:var(--ink-2);font-size:.875rem;max-width:62ch}
+.notes ul{margin:0;padding-left:1.1em;color:var(--ink-2);font-size:.875rem}
+.notes li{margin-bottom:6px}
+.notes a{color:var(--accent-ink);text-decoration-color:color-mix(in srgb,var(--accent) 40%,transparent);text-underline-offset:2px}
+.notes a:hover{text-decoration-color:var(--accent)}
+.src{columns:2;column-gap:32px;font-size:.8125rem}
+.src a{display:block;margin-bottom:7px;break-inside:avoid}
+
+/* ---------- responsive: table becomes cards ---------- */
+@media (max-width:1080px){
+  .eras{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:1000px){
+  .scroller{overflow-x:visible;border:0;background:transparent;box-shadow:none;border-radius:0}
+  table{min-width:0;display:block}
+  thead{display:none}
+  tbody{display:flex;flex-direction:column;gap:12px}
+  tbody tr{
+    display:block;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-left:3px solid var(--hue);
+    border-radius:5px;
+    padding:14px 16px;
+  }
+  tbody tr:hover td{background:transparent}
+  tbody td{display:block;padding:0;border:0}
+  tbody td+td{margin-top:11px}
+  td.c-year{
+    border:0;padding:0;
+    font-size:.6875rem;letter-spacing:.1em;color:var(--hue);font-weight:600;
+  }
+  td.c-name{margin-top:2px !important}
+  td[data-label]:not(.c-year):not(.c-name)::before{
+    content:attr(data-label);
+    display:block;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.5625rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin-bottom:3px;
+  }
+  tr.era-row{
+    background:transparent;border:0;border-radius:0;padding:14px 0 2px;
+  }
+  tr.era-row td{border:0;background:transparent;padding:0}
+  .src{columns:1}
+}
+@media (max-width:520px){
+  .eras{grid-template-columns:repeat(2,1fr)}
+  .count{margin-left:0;width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important;animation:none !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">Reference &middot; architecture lineage</p>
+    <h1>Perceptron to <em>World Models</em></h1>
+    <p class="standfirst">Sixty-nine architectures in the order they arrived, from the perceptron to world models, with the 23 that had the biggest impact measured by the adoption of the field afterwards. Each row gives the mechanism, the technological breakthrough, what it is used for, who made it popular and where it is strong and weak. Each generation removed a bottleneck the one before it hit, and inherited a new challenge.</p>
+    <div class="meta">
+      <span><b>69</b> architectures</span>
+      <span><b>23</b> milestones</span>
+      <span><b>1943</b> &rarr; <b>2026</b></span>
+      <span><b>6</b> eras</span>
+      <span>compiled 11 Sep 2026</span>
+    </div>
+  </header>
+
+  <section class="tl" aria-label="Milestone timeline">
+    <div class="band-head">
+      <span class="band-title">The 23 milestones</span>
+      <span class="band-hint">The axis breaks in the middle: the lower track spends the same width on 14 years that the upper one spends on 57. Click a milestone to find it in the table.</span>
+    </div>
+    <div class="tl-scroll">
+      <svg id="tl" viewBox="0 0 1200 430" role="img" aria-label="Timeline of the 23 milestone architectures, 1958 to 2024"></svg>
+    </div>
+  </section>
+
+  <section class="band" aria-label="Eras">
+    <div class="band-head">
+      <span class="band-title">Filter by era</span>
+      <span class="band-hint">Filters the timeline above and the table below. Click the selected era again to clear.</span>
+    </div>
+    <div class="eras" id="eras"></div>
+  </section>
+
+  <div class="controls">
+    <label class="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>
+      <input id="q" type="search" placeholder="Search architecture, use case, lab or model (e.g. CLIP, DeepSeek, robotics)" aria-label="Search">
+    </label>
+    <button class="btn" id="mile" type="button" aria-pressed="false">&#9670; Milestones only</button>
+    <button class="btn" id="sort" type="button">Sort: oldest first &darr;</button>
+    <button class="btn" id="reset" type="button">Reset</button>
+    <span class="count" id="count"></span>
+  </div>
+
+  <div class="scroller">
+    <table>
+      <colgroup>
+        <col style="width:78px"><col style="width:190px"><col style="width:244px"><col style="width:254px">
+        <col style="width:176px"><col style="width:206px"><col style="width:190px"><col style="width:190px">
+        <col style="width:126px">
+      </colgroup>
+      <thead>
+        <tr>
+          <th scope="col">Year</th>
+          <th scope="col">Architecture</th>
+          <th scope="col">How it works</th>
+          <th scope="col">Breakthrough vs. previous SOTA</th>
+          <th scope="col">Mainly used for</th>
+          <th scope="col">Examples &middot; who built them</th>
+          <th scope="col">Main advantage</th>
+          <th scope="col">Main drawback</th>
+          <th scope="col">Source</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <div class="notes">
+    <section>
+      <h2>How to read this</h2>
+      <p><strong>Year</strong> is the first publication or release, not the year the idea became popular. Backpropagation is a good example: the maths dates to 1970, the paper that made everyone use it is 1986.</p>
+      <p>A few entries are <strong>training methods or kernels rather than architectures</strong> (RLHF, GRPO, FlashAttention, PPO). They are in here because they changed what architectures were possible, which is the question this table is really about.</p>
+      <p>The <strong>&#9670; milestone</strong> mark is for the 23 entries that reset the default for everything after them: a new thing became possible, and within a few years most of the field had rebuilt around it. Useful ideas that stayed in their niche (KAN, capsules, normalizing flows) and refinements of an existing idea (Swin, GRU, MLA) are not marked, however good they are. The mark is a judgement call, not a measurement.</p>
+      <p>The <strong>Source</strong> column links the paper or release that introduced each entry, so every row can be checked at the primary source rather than taken on trust.</p>
+      <p>Entries from <strong>2026</strong> are weeks to months old. Treat the frontier rows as a snapshot, not settled history: linear-attention parity at trillion scale in particular is still contested, and MiniMax reverting from linear attention in M1 back to full attention in M2 is the cautionary data point.</p>
+    </section>
+    <section>
+      <h2>Three patterns worth noticing</h2>
+      <ul>
+        <li><strong>Bottlenecks move, they don't disappear.</strong> RNNs were gradient-bound, Transformers are memory-bound, sparse models are HBM-bound. Each fix exposes the next wall.</li>
+        <li><strong>Removing a hand-built prior usually wins, eventually.</strong> Hand-crafted features &rarr; CNNs, alignment tables &rarr; attention, convolutions &rarr; ViT, tokenizers &rarr; byte-level models. Each needed more data than anyone expected.</li>
+        <li><strong>2024&ndash;2026 is about spending compute selectively</strong> rather than uniformly: sparse experts, sparse attention, conditional memory, and thinking longer only when the question is hard.</li>
+      </ul>
+    </section>
+    <section style="grid-column:1/-1">
+      <h2>Sources</h2>
+      <div class="src">
+        <a href="https://huggingface.co/blog/ProCreations/the-mega-article">ProCreations, &ldquo;The Mega Article&rdquo; &mdash; Hugging Face</a>
+        <a href="https://arxiv.org/abs/1706.03762">Vaswani et al., Attention Is All You Need (2017)</a>
+        <a href="https://arxiv.org/abs/2010.11929">Dosovitskiy et al., An Image Is Worth 16x16 Words (2020)</a>
+        <a href="https://arxiv.org/abs/2103.00020">Radford et al., Learning Transferable Visual Models (CLIP, 2021)</a>
+        <a href="https://arxiv.org/abs/2006.11239">Ho et al., Denoising Diffusion Probabilistic Models (2020)</a>
+        <a href="https://arxiv.org/abs/2112.10752">Rombach et al., High-Resolution Image Synthesis with Latent Diffusion (2021)</a>
+        <a href="https://arxiv.org/abs/2203.02155">Ouyang et al., Training LMs to Follow Instructions (InstructGPT, 2022)</a>
+        <a href="https://arxiv.org/abs/2308.04079">Kerbl et al., 3D Gaussian Splatting (2023)</a>
+        <a href="https://sebastianraschka.com/llm-architecture-gallery/hybrid-attention/">Raschka, LLM Architecture Gallery &mdash; hybrid attention</a>
+        <a href="https://magazine.sebastianraschka.com/p/llm-research-papers-2026-part1">Raschka, LLM Research Papers: The 2026 List</a>
+        <a href="https://pli.princeton.edu/blog/2026/mamba-3-improved-sequence-modeling-using-state-space-principles">Princeton PLI, Mamba-3 (2026)</a>
+        <a href="https://www.marktechpost.com/2026/01/14/deepseek-ai-researchers-introduce-engram-a-conditional-memory-axis-for-sparse-llms/">DeepSeek Engram &mdash; conditional memory (2026)</a>
+        <a href="https://api-docs.deepseek.com/news/news250929/">DeepSeek-V3.2 &mdash; sparse attention in production (2025)</a>
+        <a href="https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/">Google DeepMind, Genie 3 (2025)</a>
+        <a href="https://ai.meta.com/blog/v-jepa-2-world-model-benchmarks/">Meta AI, V-JEPA 2 (2025)</a>
+        <a href="https://developer.nvidia.com/blog/introducing-nemotron-3-super-an-open-hybrid-mamba-transformer-moe-for-agentic-reasoning/">NVIDIA, Nemotron 3 hybrid Mamba-Transformer MoE (2026)</a>
+        <a href="https://research.google/blog/titans-miras-helping-ai-have-long-term-memory/">Google Research, Titans &amp; MIRAS (2025)</a>
+        <a href="https://arcprize.org/blog/hrm-analysis">ARC Prize, Hidden drivers of HRM's performance (2025)</a>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+const ERAS = [
+  {id:1, name:"Foundations",            years:"1943–1985", v:"--e1"},
+  {id:2, name:"Connectionism",          years:"1986–2011", v:"--e2"},
+  {id:3, name:"Deep learning boom",     years:"2013–2016", v:"--e3"},
+  {id:4, name:"Attention &amp; scale",  years:"2017–2020", v:"--e4"},
+  {id:5, name:"Foundation models",      years:"2021–2023", v:"--e5"},
+  {id:6, name:"Efficiency &amp; embodiment", years:"2024–2026", v:"--e6"}
+];
+
+// [era, year, abbr, full, how, breakthrough, use, [[model, org]...], advantage, drawback]
+const D = [
+[1,1943,"MCP","McCulloch-Pitts neuron",
+ "A binary threshold unit: sum the fixed-weight inputs, fire if the sum clears a threshold.",
+ "First proof that a network of idealised neurons can compute any logical function — thinking becomes computable.",
+ "Theory only; the conceptual ancestor of every neural network.",
+ [["MCP logic nets","McCulloch &amp; Pitts"],["SNARC","Minsky &amp; Edmonds"]],
+ "Showed that neural computation and logic are the same thing.",
+ "Cannot learn at all — every weight is set by hand."],
+
+[1,1958,"Perceptron","Rosenblatt perceptron",
+ "Same threshold unit, but the weights are corrected from the unit's own mistakes.",
+ "The first trainable neural network, with a proof that it converges on linearly separable data.",
+ "Character and pattern recognition.",
+ [["Mark I Perceptron","Cornell Aeronautical Lab"],["ADALINE","Stanford"]],
+ "The first real learning machine, and provably convergent.",
+ "Draws only straight boundaries — it cannot even do XOR, which triggered the first AI winter."],
+
+[1,1982,"Hopfield net","Hopfield network",
+ "A symmetric fully-connected net that rolls downhill on an energy landscape into the nearest stored pattern.",
+ "Content-addressable memory — recall a whole pattern from a fragment — and it imported statistical physics into ML.",
+ "Associative memory, pattern completion and denoising, combinatorial optimisation.",
+ [["Hopfield-Tank TSP net","Caltech"],["Modern Hopfield networks","IBM / JKU Linz"]],
+ "Elegant, provably converges, robust to corrupted input.",
+ "Holds only about 0.14 patterns per neuron, and invents spurious memories."],
+
+[1,1985,"BM / RBM","Boltzmann machine &amp; restricted BM",
+ "A stochastic Hopfield net with hidden units; learning matches the correlations in the data to those in the model.",
+ "First generative network with hidden variables and a principled learning rule.",
+ "Unsupervised feature learning, collaborative filtering.",
+ [["Netflix Prize RBM","Univ. of Toronto"],["Deep Boltzmann machines","Univ. of Toronto"]],
+ "Learns latent structure with no labels at all.",
+ "Sampling-based training is slow and only ever approximate."],
+
+[2,1986,"MLP + backprop","Multilayer perceptron with backpropagation",
+ "Stacked differentiable layers; the chain rule pushes the output error backwards to get every gradient in one sweep.",
+ "Hidden layers become trainable, so a network learns its own internal representations instead of being given features.",
+ "Universal function approximation — still the training engine inside every modern model.",
+ [["NETtalk","Johns Hopkins"],["ALVINN self-driving","CMU"],["the FFN block in every Transformer","—"]],
+ "General and cheap: a backward pass costs about as much as a forward one.",
+ "Gradients vanish or explode once the network is deep; needs a lot of labelled data."],
+
+[2,1987,"AE","Autoencoder",
+ "An encoder squeezes the input through a narrow bottleneck and a decoder rebuilds it; the loss is reconstruction error.",
+ "Non-linear unsupervised dimensionality reduction that beats PCA.",
+ "Compression, denoising, anomaly detection, pretraining.",
+ [["Denoising autoencoder","Univ. de Montréal"],["MAE masked autoencoder","Meta AI"]],
+ "No labels needed, and it adapts to whatever structure the data has.",
+ "The latent space is unstructured, so you cannot sample new data from it."],
+
+[2,1989,"CNN","Convolutional neural network",
+ "Small learned filters slide across the image and are reused everywhere, then pooling shrinks the map.",
+ "Exploits spatial structure: far fewer weights than an MLP, with translation tolerance built in rather than learned.",
+ "Image classification, detection, segmentation, medical imaging, also 1-D audio.",
+ [["LeNet-5","AT&amp;T Bell Labs"],["AlexNet","Univ. of Toronto"],["YOLO","Univ. of Washington"],["ConvNeXt","Meta AI"]],
+ "Strong inductive bias, parameter-efficient, works on modest datasets.",
+ "Limited receptive field and weak global context; scales worse than Transformers with data."],
+
+[2,1990,"RNN","Recurrent neural network",
+ "The hidden state is fed back in at the next time step, giving the network a running memory.",
+ "Processes variable-length sequences with a fixed parameter count, rather than a fixed-size input window.",
+ "Language modelling, speech, time series, control.",
+ [["Elman network","UC San Diego"],["RNN language model","Brno Univ. of Technology"]],
+ "Any input length, constant number of weights.",
+ "Vanishing gradients destroy long-range memory, and it cannot be parallelised over time."],
+
+[2,1997,"LSTM","Long short-term memory",
+ "A memory cell with input, forget and output gates decides what gets written, kept and read.",
+ "Gradients flow through the cell unchanged, so dependencies hundreds of steps apart become learnable.",
+ "Speech recognition, translation, handwriting, time series, RL agents.",
+ [["Google Translate (GNMT)","Google"],["Siri &amp; QuickType","Apple"],["AlphaStar core","DeepMind"]],
+ "The long-memory workhorse of the field for two decades.",
+ "Four times an RNN's parameters and still sequential, so the GPU sits idle."],
+
+[2,2006,"DBN","Deep belief network",
+ "A stack of RBMs trained greedily one layer at a time, then fine-tuned end to end with backprop.",
+ "The first practical recipe for training deep networks — and the thing that gave &ldquo;deep learning&rdquo; its name.",
+ "Unsupervised pretraining for vision and speech, before large labelled datasets existed.",
+ [["DBN acoustic models","Microsoft / Toronto / IBM"],["deep autoencoders","Univ. of Toronto"]],
+ "Unlocked depth at a time when labels were the scarce resource.",
+ "Obsolete by 2012: ReLU, dropout and GPUs made the pretraining step unnecessary."],
+
+[3,2013,"Word2Vec","Word embeddings (Word2Vec, GloVe)",
+ "Predict a word from its neighbours; the weights that fall out are dense vectors where geometry encodes meaning.",
+ "Cheap reusable meaning vectors with linear analogies (king − man + woman ≈ queen).",
+ "Features for search, classification, entity recognition, recommendation.",
+ [["Word2Vec","Google"],["GloVe","Stanford"],["fastText","Meta AI"]],
+ "Extremely fast, and the first widely used pretrain-and-transfer artefact in NLP.",
+ "One fixed vector per word, so no context and no handling of ambiguity."],
+
+[3,2013,"VAE","Variational autoencoder",
+ "The encoder outputs a distribution rather than a point, and a reparameterisation trick keeps sampling differentiable.",
+ "A probabilistic generative model trainable with plain backprop, with a smooth latent space you can sample from.",
+ "Image and molecule generation, representation learning, the latent space inside diffusion models.",
+ [["β-VAE","DeepMind"],["Stable Diffusion's latent encoder","CompVis / Stability AI"]],
+ "Principled, stable to train, and gives you a latent space you can actually navigate.",
+ "Blurry samples, and the latent code can collapse to being ignored."],
+
+[3,2013,"DQN","Deep Q-network",
+ "A CNN estimates the value of each action straight from pixels, stabilised by a replay buffer and a frozen target network.",
+ "First deep RL agent to learn dozens of different tasks end to end from raw pixels with one architecture.",
+ "Game playing, control, scheduling, recommendation.",
+ [["Atari DQN","DeepMind"],["Rainbow","DeepMind"],["data-centre cooling","DeepMind / Google"]],
+ "Model-free, and learns directly from raw sensory input.",
+ "Needs millions of frames, and only handles a discrete set of actions."],
+
+[3,2014,"GAN","Generative adversarial network",
+ "A generator and a discriminator play a minimax game until the fakes are indistinguishable from the real data.",
+ "Sharp, photorealistic samples without ever computing a likelihood.",
+ "Image synthesis, super-resolution, image-to-image translation, data augmentation.",
+ [["StyleGAN","NVIDIA"],["CycleGAN","UC Berkeley"],["BigGAN","DeepMind"]],
+ "One forward pass per sample, and output that is genuinely sharp.",
+ "Unstable training and mode collapse — it lost the image-generation crown to diffusion."],
+
+[3,2014,"Seq2Seq","Encoder-decoder sequence model",
+ "One RNN compresses the whole input into a context vector, a second RNN generates the output from it.",
+ "The first end-to-end neural mapping of one sequence to another, replacing hand-built translation pipelines.",
+ "Translation, summarisation, captioning, dialogue, speech-to-text.",
+ [["GNMT","Google"],["Show and Tell captioning","Google"]],
+ "One trained model instead of a stack of hand-engineered components.",
+ "A single fixed-length vector is a hard bottleneck for long inputs."],
+
+[3,2014,"GRU","Gated recurrent unit",
+ "A simplified LSTM: only an update and a reset gate, and no separate cell state.",
+ "LSTM-level quality with roughly a quarter fewer parameters and faster training.",
+ "The same jobs as LSTM, preferred when data or compute is tight.",
+ [["RNN encoder-decoder","Univ. de Montréal"],["GRU-D clinical models","Univ. of Southern California"]],
+ "Cheaper than LSTM and usually just as good.",
+ "Slightly less expressive on the very longest dependencies."],
+
+[3,2014,"Attention","Soft attention (Bahdanau / Luong)",
+ "At every output step the decoder computes a learned weighting over all input positions and reads a blend of them.",
+ "Removed the fixed-context bottleneck, and the weights double as an interpretable alignment.",
+ "Translation, summarisation, speech recognition, captioning.",
+ [["RNNsearch","Univ. de Montréal / Jacobs Univ."],["Listen, Attend and Spell","Google Brain"]],
+ "Direct access to any input position, however far back.",
+ "Costs input × output comparisons, and bolted onto an RNN it is still sequential."],
+
+[3,2015,"ResNet","Residual network",
+ "Every block adds its own input back to its output, so each layer learns a correction instead of a whole mapping.",
+ "Made networks of 100+ layers trainable by giving gradients an unobstructed shortcut path.",
+ "Every vision backbone, and the residual stream inside Transformers and diffusion models.",
+ [["ResNet-50","Microsoft Research Asia"],["ResNeXt","Meta AI"]],
+ "Depth became essentially free — now a universal building block rather than a model.",
+ "Very deep ResNets are heavily over-parameterised for the function they compute."],
+
+[3,2015,"U-Net","U-Net",
+ "An encoder-decoder with skip connections that carry fine spatial detail across to the decoder.",
+ "Accurate pixel-level segmentation from a few dozen annotated images instead of thousands.",
+ "Medical image segmentation — and the denoiser inside most diffusion models.",
+ [["U-Net","Univ. of Freiburg"],["nnU-Net","DKFZ Heidelberg"],["SD denoiser","CompVis / Stability AI"]],
+ "Keeps fine detail while still seeing global context; very frugal with data.",
+ "Fixed resolution, and it scales less gracefully than a Transformer denoiser."],
+
+[3,2015,"NF","Normalizing flows",
+ "A chain of invertible transforms maps a simple distribution onto the data, with an exactly computable likelihood.",
+ "Exact likelihood, exact latent inference and sampling in one model — something VAEs and GANs each only half do.",
+ "Density estimation, audio synthesis, physics sampling, anomaly detection.",
+ [["Glow","OpenAI"],["RealNVP","Google Brain"],["WaveGlow","NVIDIA"]],
+ "Exact probabilities and stable training.",
+ "Every layer must be invertible, which is parameter-hungry and caps sample quality."],
+
+[3,2016,"AlphaGo / AlphaZero","Deep RL with tree search",
+ "Policy and value networks steer Monte-Carlo tree search; AlphaZero learns entirely from self-play.",
+ "Superhuman planning with no human games and one algorithm covering Go, chess and shogi.",
+ "Perfect-information games, planning, combinatorial search, scientific discovery.",
+ [["AlphaGo / AlphaZero","DeepMind"],["MuZero","DeepMind"],["AlphaTensor","DeepMind"]],
+ "Search plus learning beats either on its own, by a wide margin.",
+ "Needs a perfect simulator of the task and enormous compute."],
+
+[3,2016,"GNN","Graph neural network (GCN, GAT)",
+ "Each node repeatedly gathers messages from its neighbours and updates its own state.",
+ "Deep learning on irregular relational data, invariant to how you happen to number the nodes.",
+ "Molecules and drug discovery, recommendation, fraud, traffic and ETA, physics simulation.",
+ [["GCN","Univ. of Amsterdam"],["GAT","Cambridge / Mila"],["PinSage","Pinterest"],["GNoME","Google DeepMind"]],
+ "The natural fit for anything genuinely shaped like a network.",
+ "Over-smooths as it gets deeper, and is hard to scale to billion-edge graphs."],
+
+[4,2017,"Transformer","Transformer",
+ "Multi-head self-attention lets every token look at every other token at once; no recurrence, no convolution.",
+ "Training became fully parallel, which is the single fact that made the scaling era possible.",
+ "Everything — language, vision, speech, code, proteins, robot control.",
+ [["BERT","Google"],["GPT-4","OpenAI"],["Llama","Meta AI"],["Claude","Anthropic"]],
+ "Parallel, scales predictably with compute, and transfers across modalities.",
+ "Attention cost grows with the square of sequence length; very data-hungry."],
+
+[4,2017,"MoE","Sparse mixture of experts",
+ "A router sends each token through a handful of expert sub-networks instead of through all the weights (idea: 1991).",
+ "Broke the link between parameter count and compute per token — capacity stopped costing FLOPs.",
+ "Large language models, where knowledge capacity matters more than depth.",
+ [["Switch Transformer","Google"],["Mixtral","Mistral AI"],["gpt-oss","OpenAI"]],
+ "Ten times the parameters at roughly the same inference cost.",
+ "Every expert must sit in memory, and routing can go unbalanced or unstable."],
+
+[4,2017,"VQ-VAE","Vector-quantised VAE",
+ "The encoder's output is snapped to the nearest entry in a learned codebook, so latents become discrete tokens.",
+ "Turned images and audio into token sequences, so language-model machinery could generate them.",
+ "Image, audio and video generation, neural codecs, tokenizers for multimodal models.",
+ [["DALL·E 1","OpenAI"],["Jukebox","OpenAI"],["EnCodec","Meta AI"]],
+ "Sharp reconstructions, and it plugs straight into the LLM toolchain.",
+ "Two-stage training, and codebooks tend to collapse onto a few entries."],
+
+[4,2017,"CapsNet","Capsule network",
+ "Groups of neurons output vectors encoding an object's pose, routed to whichever higher capsule agrees with them.",
+ "Explicit part-whole relationships and viewpoint equivariance — Hinton's answer to what pooling throws away.",
+ "Research on viewpoint-robust recognition and overlapping objects.",
+ [["CapsNet","Google Brain"],["matrix capsules","Google Brain"]],
+ "Equivariant and data-efficient on small images.",
+ "Routing is slow and never scaled — the best-known dead end of the era."],
+
+[4,2017,"PPO","Proximal policy optimization",
+ "Policy-gradient RL with a clipped objective that stops any single update moving the policy too far.",
+ "Stable RL from a first-order method that fits in a few lines of code, instead of TRPO's heavy machinery.",
+ "Robotics, continuous control, game agents — and the RL half of RLHF.",
+ [["OpenAI Five","OpenAI"],["InstructGPT","OpenAI"],["Llama 2-Chat","Meta AI"]],
+ "Simple and robust across both discrete and continuous action spaces.",
+ "On-policy, so it burns through samples."],
+
+[4,2018,"BERT","Bidirectional encoder representations from Transformers",
+ "A Transformer encoder pretrained by predicting randomly masked words using context from both sides.",
+ "Deep bidirectional context, and one pretrained model fine-tuned to state of the art on eleven tasks at once.",
+ "Classification, retrieval, question answering, embeddings, search ranking.",
+ [["BERT","Google"],["RoBERTa","Meta AI"],["DeBERTa","Microsoft"],["Sentence-BERT","TU Darmstadt"]],
+ "Outstanding understanding and embeddings, and cheap to fine-tune.",
+ "Encoder only — it cannot generate text."],
+
+[4,2018,"GPT","Generative pre-trained Transformer",
+ "A decoder-only Transformer trained on nothing but next-token prediction over web-scale text.",
+ "Scale alone produced in-context learning: a new task from a prompt, with no gradient updates at all.",
+ "Chat, writing, code, translation, reasoning, agents.",
+ [["GPT-3 / GPT-5","OpenAI"],["Llama","Meta AI"],["Claude","Anthropic"],["Qwen","Alibaba"]],
+ "One model covering thousands of tasks with no task-specific training data.",
+ "Enormous training cost, confident hallucination, and no grounding in truth."],
+
+[4,2018,"StyleGAN","Style-based GAN",
+ "A mapping network plus per-resolution style injection separates coarse structure from fine texture.",
+ "Photoreal faces with attributes you can actually control and mix independently.",
+ "Face and avatar generation, art, data augmentation.",
+ [["StyleGAN2 / 3","NVIDIA"],["thispersondoesnotexist","Phillip Wang, on StyleGAN2"]],
+ "Instant sampling with fine-grained control over style at each scale.",
+ "Works only in narrow domains, and inherits GAN training fragility."],
+
+[4,2018,"Neural ODE","Neural ordinary differential equation",
+ "Replaces discrete layers with a continuous derivative, integrated by an off-the-shelf ODE solver.",
+ "Depth becomes continuous and adaptive, and memory cost stops growing with it.",
+ "Irregularly sampled time series, continuous flows, physics-informed models.",
+ [["FFJORD","Univ. of Toronto"],["Latent ODE","Univ. of Toronto"]],
+ "Constant memory, and it handles irregular sampling natively.",
+ "Slow — every forward pass runs a numerical solver."],
+
+[4,2019,"T5","Text-to-text transfer Transformer",
+ "A full encoder-decoder in which every task, even classification, is written as text in and text out.",
+ "One uniform interface for all of NLP, plus the most systematic study of pretraining choices to that point.",
+ "Translation, summarisation, question answering, instruction tuning.",
+ [["T5 / Flan-T5","Google"],["mT5","Google"]],
+ "Clean interface, and encoder-decoder is strong at conditional generation.",
+ "Roughly twice the parameters of a decoder-only model of the same depth."],
+
+[4,2020,"DDPM","Denoising diffusion probabilistic model",
+ "Add noise to data step by step, then train a network to undo exactly one step at a time.",
+ "Beat GANs on image quality with training that is stable and covers the whole data distribution.",
+ "Image, audio, video, 3D and molecule generation — and robot action policies.",
+ [["DDPM","UC Berkeley"],["Imagen","Google"],["Diffusion Policy","Columbia / TRI"]],
+ "Best-in-class sample quality and diversity, and easy to condition and steer.",
+ "Sampling needs many network passes, so it is inherently slow."],
+
+[4,2020,"ViT","Vision Transformer",
+ "Cut the image into 16×16 patches, treat each as a token, and run a standard Transformer encoder.",
+ "With enough pretraining data, a convolution-free model beats CNNs — the spatial prior turned out to be optional.",
+ "Image classification, and backbones for detection, segmentation and multimodal models.",
+ [["ViT","Google"],["DINOv2","Meta AI"],["CLIP image encoder","OpenAI"]],
+ "Scales with data better than CNNs and shares all the NLP tooling.",
+ "Data-hungry, and quadratic in the number of patches."],
+
+[4,2020,"NeRF","Neural radiance field",
+ "A small MLP maps a 3D point and viewing direction to colour and density; images come from classical ray marching.",
+ "Photorealistic novel views of a real scene from a few dozen photos, stored in a few megabytes of weights.",
+ "Novel-view synthesis, VR/AR, digital twins, VFX, robot mapping.",
+ [["NeRF","UC Berkeley / Google"],["Instant-NGP","NVIDIA"],["Block-NeRF","Waymo"]],
+ "Photorealistic, including reflections and semi-transparency.",
+ "One network per scene, originally hours to train and seconds per frame."],
+
+[4,2020,"SSL speech","Self-supervised speech models (wav2vec 2.0, Conformer)",
+ "Mask spans of the encoded speech representations and learn to identify the missing latent units; Conformer adds convolution to attention.",
+ "State-of-the-art recognition from ten minutes of labelled audio instead of thousands of hours.",
+ "Transcription, subtitling, voice assistants, low-resource languages.",
+ [["wav2vec 2.0 / MMS","Meta AI"],["Conformer / USM","Google"],["Whisper","OpenAI"]],
+ "Near-human accuracy across 100+ languages with almost no transcripts.",
+ "Compute-heavy; Whisper in particular hallucinates over silence and is weak at streaming."],
+
+[5,2021,"CLIP","Contrastive language-image pre-training",
+ "Separate image and text encoders, trained so that matching pairs land at the same place in one shared space.",
+ "Zero-shot image classification from plain-language labels, with no labelled training set for the target task.",
+ "Retrieval, zero-shot classification, moderation, and conditioning for generative models.",
+ [["CLIP","OpenAI"],["OpenCLIP","LAION"],["SigLIP","Google DeepMind"]],
+ "Open vocabulary, and it created the shared image-text space almost everything now builds on.",
+ "Inherits web-scale bias; weak at counting, fine detail and reading text in images."],
+
+[5,2021,"Swin","Swin Transformer",
+ "Self-attention inside local windows that shift between layers, arranged in a multi-scale pyramid.",
+ "Linear rather than quadratic cost in image size, which made Transformers usable for dense prediction.",
+ "Detection, semantic and instance segmentation, video, high-resolution vision.",
+ [["Swin-L / Swin V2","Microsoft Research Asia"],["Video Swin","Microsoft Research Asia"]],
+ "Efficient at high resolution, with CNN-like multi-scale features.",
+ "Reintroduces a hand-designed locality prior and a good deal of complexity."],
+
+[5,2021,"S4","Structured state space sequence model",
+ "A learned continuous-time linear recurrence, evaluated as one very long convolution.",
+ "First architecture to beat Transformers on extremely long sequences, at linear instead of quadratic cost.",
+ "Long audio, genomics, time series.",
+ [["S4 / S4D","Stanford"],["H3","Stanford"]],
+ "Linear scaling and constant-memory inference.",
+ "Its dynamics ignore the content of the input, which makes it weak at language."],
+
+[5,2021,"AlphaFold 2","AlphaFold 2",
+ "Attention over an evolutionary sequence alignment and a residue-pair map, predicting 3D atom coordinates directly.",
+ "Solved protein structure prediction at near-experimental accuracy — a 50-year grand challenge, closed.",
+ "Structural biology, drug discovery, enzyme and protein design.",
+ [["AlphaFold 2 / 3","DeepMind / Isomorphic Labs"],["ESMFold","Meta AI"],["RoseTTAFold","Univ. of Washington"]],
+ "Seconds instead of years per structure, with 200M+ structures released publicly.",
+ "Predicts a single static structure — weak on dynamics, disorder and mutation effects."],
+
+[5,2022,"LDM","Latent diffusion / Stable Diffusion",
+ "Run the diffusion process inside a compressed VAE latent space instead of on raw pixels.",
+ "Cut the cost of high-resolution generation roughly 50-fold, so it ran on a consumer GPU and could be open-sourced.",
+ "Text-to-image, inpainting, editing — the foundation of the open image ecosystem.",
+ [["Stable Diffusion / SDXL","Stability AI / CompVis"],["Midjourney","Midjourney"]],
+ "High-resolution generation cheap enough for anyone to fine-tune.",
+ "The autoencoder caps fine detail, and sampling still takes many steps."],
+
+[5,2022,"RLHF","Reinforcement learning from human feedback",
+ "Fine-tune on demonstrations, train a reward model on human preference rankings, then optimise the model against it.",
+ "Aligns a model to fuzzy human intent that nobody can write down as a loss function.",
+ "Chat assistants, instruction following, safety and tone tuning.",
+ [["InstructGPT / ChatGPT","OpenAI"],["Constitutional AI","Anthropic"],["DPO","Stanford"]],
+ "A 1.3B aligned model beat 175B GPT-3 on human preference — alignment outperformed 100× the parameters.",
+ "Expensive subjective labelling, and it invites reward hacking and sycophancy."],
+
+[5,2022,"MLLM","Multimodal LLM (frozen encoders + adapter)",
+ "Bolt a pretrained vision encoder onto a pretrained language model through a small trained bridge.",
+ "General visual reasoning for a fraction of the cost of training a multimodal model from scratch.",
+ "Visual question answering, documents and charts, screenshots and UI agents, robot perception.",
+ [["Flamingo","DeepMind"],["LLaVA","Univ. of Wisconsin / Microsoft"],["GPT-4V","OpenAI"],["Qwen-VL","Alibaba"]],
+ "Reuses two pretrained giants almost for free.",
+ "Hallucinates image detail, and is weak at precise spatial reasoning and counting."],
+
+[5,2022,"FlashAttention","IO-aware exact attention",
+ "Tiles attention into on-chip memory and fuses the softmax, so the big score matrix is never written to main memory.",
+ "Identical maths, but memory traffic drops far enough that long context becomes economically possible.",
+ "Every Transformer training and inference stack in production.",
+ [["FlashAttention-2 / 3 / 4","Stanford / Together AI / NVIDIA"]],
+ "A free, exact speedup with no quality trade-off whatsoever.",
+ "Hand-written per GPU generation — each new chip needs a rewrite."],
+
+[5,2022,"DiT","Diffusion Transformer",
+ "Replace the U-Net denoiser with a plain Transformer operating on latent patches.",
+ "Image generation quality started to follow Transformer scaling laws, so it could simply be scaled up.",
+ "Image, video and 3D generation — the backbone of every large visual model since.",
+ [["Sora","OpenAI"],["Stable Diffusion 3","Stability AI"],["Veo","Google DeepMind"]],
+ "One scaling recipe that works for every visual modality.",
+ "Quadratic in patch count, which is brutal for long video."],
+
+[5,2022,"Flow matching","Flow matching / rectified flow",
+ "Learn a velocity field along a straight path from noise to data, instead of a curved stochastic trajectory.",
+ "Comparable quality in a handful of steps rather than dozens to hundreds, from a simpler objective.",
+ "Image and video generation — and the action decoder in modern robot policies.",
+ [["FLUX.1 / FLUX.2","Black Forest Labs"],["Stable Diffusion 3","Stability AI"],["π0","Physical Intelligence"]],
+ "Few-step sampling with more stable training than diffusion.",
+ "Aggressive step distillation costs sample diversity."],
+
+[5,2023,"3DGS","3D Gaussian splatting",
+ "Represent the scene as millions of little anisotropic 3D Gaussians and rasterise them — no network in the render loop.",
+ "NeRF-or-better quality at real-time frame rates, trained in minutes rather than hours.",
+ "Real-time VR/AR, telepresence, capture for games and film, robotics and SLAM.",
+ [["3DGS","Inria"],["Luma AI","Luma"],["Marble","World Labs"]],
+ "Real-time rendering with explicit, editable primitives.",
+ "Hundreds of megabytes per scene, and artefacts wherever views are sparse."],
+
+[5,2023,"Mamba","Selective state space model (S6)",
+ "Makes the state-space parameters depend on the input, so the model chooses what to remember and what to drop.",
+ "First linear-time model to match Transformer language quality — and it needs no KV cache at all.",
+ "Long-context language, DNA, audio, vision backbones.",
+ [["Mamba","CMU / Princeton"],["Codestral Mamba","Mistral AI"],["Vision Mamba","—"]],
+ "Around 5× faster decoding and constant memory per token.",
+ "A fixed-size state cannot store exact detail — poor at needle-in-a-haystack recall."],
+
+[5,2023,"RWKV / RetNet","Attention-free recurrent language models",
+ "An RNN formulated so it trains in parallel like a Transformer but runs recurrently at inference.",
+ "Broke the assumed trade-off between parallel training and cheap recurrent inference.",
+ "Edge and CPU inference, very long sequences, low-power deployment.",
+ [["RWKV-7 Goose","RWKV Foundation"],["RetNet","Microsoft Research Asia"],["Eagle 7B","Recursal AI"]],
+ "Truly constant memory per token — excellent on small devices.",
+ "Consistently a tier behind frontier models, with much smaller ecosystems."],
+
+[5,2023,"VLA","Vision-language-action model",
+ "Fine-tune a vision-language model on robot data so that actions become just another output modality.",
+ "Internet semantic knowledge transferred to manipulation — &ldquo;pick up the extinct animal&rdquo; worked zero-shot.",
+ "Robot manipulation, humanoids, cross-embodiment control.",
+ [["RT-2","Google DeepMind"],["OpenVLA","Stanford / Berkeley / TRI"],["Octo","UC Berkeley"]],
+ "Generalises to objects and instructions that never appeared in any robot dataset.",
+ "Discrete action tokens are coarse and slow — RT-2 ran at about 3 Hz."],
+
+[6,2024,"Fine-grained MoE","Fine-grained and shared-expert mixture of experts",
+ "Split each expert into many small ones, keep one or two always on, and balance the router with bias terms rather than a loss.",
+ "Made sparse models genuinely specialise, so activating ~3% of weights per token became normal at frontier scale.",
+ "Effectively every frontier and open-weight LLM from 2025 onwards.",
+ [["DeepSeek-V3 / V4","DeepSeek"],["Qwen3.5","Alibaba"],["Kimi K2 / K3","Moonshot AI"],["Llama 4","Meta AI"]],
+ "Trillion-parameter knowledge at tens-of-billions inference cost.",
+ "Memory-bound serving, and a few load-bearing &ldquo;super experts&rdquo; make naive pruning catastrophic."],
+
+[6,2024,"MLA","Multi-head latent attention",
+ "Compress keys and values into one small latent vector before caching, then expand per head when they are used.",
+ "About 93% less KV cache than standard attention — and better quality than the usual grouped-query shortcut.",
+ "Long-context serving at high batch size.",
+ [["DeepSeek-V2 / V3 / R1","DeepSeek"],["Kimi Linear","Moonshot AI"]],
+ "Huge batches at long context, which is what made cheap long-context APIs possible.",
+ "More complex kernels and extra projection compute at every step."],
+
+[6,2024,"Hybrid SSM","Hybrid Transformer-SSM stack",
+ "Interleave a few full-attention layers among many Mamba or linear-attention layers.",
+ "Long-context cost collapses while the remaining attention layers preserve exact recall.",
+ "Long-context agents, on-premise deployment, high-throughput serving.",
+ [["Jamba","AI21 Labs"],["Nemotron 3","NVIDIA"],["Granite 4.0","IBM"],["Falcon-H1","TII"]],
+ "Several times the throughput at equal accuracy, and far less memory.",
+ "Two kernel families to maintain, and recall still degrades at extreme context."],
+
+[6,2024,"Test-time compute","Reasoning models (long chain-of-thought RL)",
+ "The same Transformer, RL-trained to think at length privately before it answers.",
+ "Opened a second scaling axis: accuracy now grows with inference compute, not only with training compute.",
+ "Mathematics, code, science, multi-step agentic work.",
+ [["o1 / o3","OpenAI"],["Gemini Deep Think","Google DeepMind"],["Claude extended thinking","Anthropic"]],
+ "Step changes on anything with a checkable answer.",
+ "Slow and costly per query, and hidden reasoning is hard to audit."],
+
+[6,2024,"BLT","Byte latent Transformer",
+ "Drops the tokenizer: raw bytes are grouped into patches whose size depends on how surprising the next byte is.",
+ "First byte-level model to match a tokenised Llama 3 while cutting inference compute by about half.",
+ "Multilingual and noisy text, code, robustness to spelling and scripts.",
+ [["BLT","Meta AI"],["H-Net","CMU"]],
+ "No tokenizer artefacts, and compute goes where the text is actually hard.",
+ "More complex to serve, and the entire ecosystem assumes tokens."],
+
+[6,2024,"JEPA","Joint embedding predictive architecture",
+ "Predicts the future in an abstract latent space instead of reconstructing pixels.",
+ "A world model that learns physical intuition without burning capacity on inherently unpredictable detail.",
+ "Video understanding, physical reasoning, robot planning.",
+ [["V-JEPA 2","Meta AI"],["I-JEPA","Meta AI"]],
+ "Very sample-efficient: 62 hours of robot data gave zero-shot pick-and-place on unseen arms.",
+ "Produces nothing you can look at, and trails generative world models on long-horizon control."],
+
+[6,2024,"MoD","Mixture-of-depths",
+ "A router lets only the most important tokens through each block; the rest skip it along the residual.",
+ "Conditional compute along depth rather than width — easy tokens simply cost less.",
+ "Efficiency research, vision models, on-device inference.",
+ [["Mixture-of-Depths","Google DeepMind"],["Mixture-of-Recursions","KAIST / Google"]],
+ "Around 50% faster stepping at the same quality.",
+ "No frontier LLM ships it on its own; it interacts awkwardly with batching."],
+
+[6,2024,"World model","Interactive generative world models",
+ "Generate the next frame conditioned on the action just taken, learning physics implicitly from video.",
+ "A playable, controllable environment with no 3D engine, no mesh and no physics solver anywhere in it.",
+ "Agent training, robot and autonomous-vehicle simulation, synthetic data, game prototyping.",
+ [["Genie 3","Google DeepMind"],["Cosmos","NVIDIA"],["Dreamer 4","Google DeepMind"],["Marble","World Labs"]],
+ "Trains agents where a real or hand-built simulator does not exist.",
+ "Memory lasts minutes at best, nothing persists, and compute per frame is high."],
+
+[6,2024,"KAN","Kolmogorov-Arnold network",
+ "Puts learnable spline functions on the edges instead of fixed activation functions on the nodes.",
+ "Much better accuracy per parameter on scientific problems — and you can read the learned formula straight off.",
+ "Symbolic regression, physics surrogates, PDE solvers.",
+ [["KAN / KAN 2.0","MIT / Caltech"]],
+ "Interpretable and parameter-efficient on structured, low-dimensional problems.",
+ "10–100× slower to train, no good GPU kernels, and it loses to plain MLPs on normal benchmarks."],
+
+[6,2025,"GRPO","Group relative policy optimization (open reasoning RL)",
+ "Drops the value network and normalises rewards within a sampled group of answers (algorithm published in DeepSeekMath, 2024).",
+ "Reasoning emerged from pure RL with rule-based rewards and no supervised reasoning examples at all.",
+ "Training reasoning models — now the default RL algorithm across the industry.",
+ [["DeepSeek-R1","DeepSeek"],["Qwen3 reasoning","Alibaba"],["Open-R1","Hugging Face"]],
+ "Open recipe, cheap to run, and it distils easily into small dense models.",
+ "Reward hacking wherever the answer cannot be checked automatically."],
+
+[6,2025,"NSA / DSA","Natively trainable sparse attention",
+ "A cheap indexer scores past tokens and only the top few thousand get full attention — and this is trained end to end.",
+ "Sparse attention that speeds up training too, without the quality loss of bolting sparsity on at inference.",
+ "Million-token context at commodity prices.",
+ [["DeepSeek-V3.2 / V4","DeepSeek"],["MoBA","Moonshot AI"]],
+ "Turned 1M-token context into a default pricing tier rather than a premium one.",
+ "Multi-stage indexing is complex to serve, and gains only appear past ~32K tokens."],
+
+[6,2025,"Gated DeltaNet","Hybrid linear attention (3:1)",
+ "A gated delta rule erases and rewrites an associative memory, with one full-attention layer for every three linear ones.",
+ "Cuts the KV cache by around 75% and multiplies decode speed at very long context.",
+ "Long-context agents and high-throughput frontier serving.",
+ [["Qwen3-Next / Qwen3.5","Alibaba"],["Kimi Linear / K3","Moonshot AI"],["Gated DeltaNet","NVIDIA"]],
+ "Up to ~6× faster decoding at 1M tokens with benchmark parity.",
+ "Parity is mostly shown at ~50B scale; MiniMax shipped linear attention in M1 and then went back to full attention in M2."],
+
+[6,2025,"dLLM","Diffusion language model",
+ "Start from an all-masked sequence and unmask many tokens at once over a few dozen denoising steps.",
+ "Parallel decoding at 1,000+ tokens per second, and the model can revise tokens it has already written.",
+ "Latency-critical code completion and chat.",
+ [["Mercury 2","Inception Labs"],["DiffusionGemma","Google DeepMind"],["LLaDA 2","Ant Group"]],
+ "Owns the latency frontier, and bidirectional context sidesteps the reversal curse.",
+ "Still mid-tier quality, and choosing tokens in parallel breaks dependencies between them."],
+
+[6,2025,"Titans","Test-time memory modules",
+ "A memory module whose weights keep learning during inference, driven by how surprising each token is.",
+ "Memory that grows past the context window instead of being crushed into a fixed-size state.",
+ "Very long documents, continual personalisation, continual learning research.",
+ [["Titans / ATLAS","Google Research"],["HOPE / Nested Learning","Google Research"]],
+ "Beats far larger models past 2M tokens, and attacks catastrophic forgetting directly.",
+ "Research stage — weights that drift per user break normal serving and caching."],
+
+[6,2025,"Dual-system VLA","Flow-matching vision-language-action",
+ "A slow VLM reasons in language while a fast action expert emits continuous motion at 50–200 Hz.",
+ "Flow-matching action decoding brought real dexterity and open-world generalisation to robots.",
+ "Manipulation, humanoids, household and industrial tasks.",
+ [["π0.7","Physical Intelligence"],["Gemini Robotics 1.5","Google DeepMind"],["GR00T N1.7","NVIDIA"],["Helix","Figure AI"]],
+ "Smooth high-frequency control and semantic reasoning in one system.",
+ "Still hungry for real robot data, and generalisation outside the training distribution is uneven."],
+
+[6,2025,"AR image gen","Unified autoregressive image generation",
+ "The same Transformer weights predict image tokens and text tokens in one sequence.",
+ "Reliable prompt adherence, legible text inside images, and genuine multi-turn editing.",
+ "Design, illustration, editing, diagrams and document images.",
+ [["GPT-Image-1","OpenAI"],["Nano Banana Pro","Google"],["Janus-Pro","DeepSeek"]],
+ "One model for understanding and generation, with in-context editing.",
+ "Serial token decoding is slow without speculative tricks."],
+
+[6,2025,"TRM / HRM","Tiny recursive reasoning models",
+ "A two-layer network recursively refines its own answer up to sixteen times, with no chain-of-thought text.",
+ "7M parameters beating frontier LLMs on ARC-AGI puzzles, trained from scratch on about a thousand examples.",
+ "Structured puzzle and grid reasoning; research on recursion versus scale.",
+ [["TRM","Samsung SAIL Montreal"],["HRM","Sapient Intelligence"]],
+ "Extraordinary compute efficiency on structured problems.",
+ "Very narrow, and replications credit the outer refinement loop more than the architecture."],
+
+[6,2026,"Engram","Conditional memory (second sparsity axis)",
+ "Hashed n-gram memory tables, gated by context, give O(1) knowledge lookup alongside the experts that do the computing.",
+ "Separates remembering from reasoning — and the tables can live in system RAM instead of GPU memory.",
+ "Knowledge-heavy LLMs where HBM capacity is the binding constraint.",
+ [["Engram","DeepSeek"]],
+ "Several benchmark points at equal size, with knowledge moved off the GPU entirely.",
+ "Very new — only one lab has published it at scale."],
+
+[6,2026,"Mamba-3","Mamba-3",
+ "Second-order (trapezoidal) discretisation, a complex-valued state, and vector-valued input per channel.",
+ "Fixes the state-tracking weakness of earlier SSMs and roughly halves decode cost at matched quality.",
+ "Efficient long-context language modelling.",
+ [["Mamba-3","CMU / Princeton / Together AI"]],
+ "Better arithmetic intensity, which is free performance at inference time.",
+ "Still research scale — no frontier model ships pure Mamba-3."]
+];
+
+// The 23 entries that changed what everything after them looked like.
+const MILE = new Set(["Perceptron","MLP + backprop","CNN","LSTM","DBN","DQN","GAN","Attention",
+  "ResNet","AlphaGo / AlphaZero","Transformer","GPT","BERT","DDPM","ViT","CLIP","AlphaFold 2",
+  "LDM","RLHF","Mamba","VLA","Test-time compute","Fine-grained MoE"]);
+
+// One citable source per entry: the paper or release that introduced it.
+const SRC = {
+"MCP":["Bull. Math. Biophys. 1943","https://link.springer.com/article/10.1007/BF02478259"],
+"Perceptron":["Psych. Review 1958","https://doi.org/10.1037/h0042519"],
+"Hopfield net":["PNAS 1982","https://www.pnas.org/doi/10.1073/pnas.79.8.2554"],
+"BM / RBM":["Cognitive Science 1985","https://onlinelibrary.wiley.com/doi/10.1207/s15516709cog0901_7"],
+"MLP + backprop":["Nature 1986","https://www.nature.com/articles/323533a0"],
+"AE":["AAAI 1987","https://cdn.aaai.org/AAAI/1987/AAAI87-050.pdf"],
+"CNN":["Proc. IEEE 1998","https://ieeexplore.ieee.org/document/726791"],
+"RNN":["Cognitive Science 1990","https://onlinelibrary.wiley.com/doi/10.1207/s15516709cog1402_1"],
+"LSTM":["Neural Computation 1997","https://direct.mit.edu/neco/article/9/8/1735/6109"],
+"DBN":["Neural Computation 2006","https://direct.mit.edu/neco/article/18/7/1527/7065"],
+"Word2Vec":["arXiv 1301.3781","https://arxiv.org/abs/1301.3781"],
+"VAE":["arXiv 1312.6114","https://arxiv.org/abs/1312.6114"],
+"DQN":["arXiv 1312.5602","https://arxiv.org/abs/1312.5602"],
+"GAN":["arXiv 1406.2661","https://arxiv.org/abs/1406.2661"],
+"Seq2Seq":["arXiv 1409.3215","https://arxiv.org/abs/1409.3215"],
+"GRU":["arXiv 1406.1078","https://arxiv.org/abs/1406.1078"],
+"Attention":["arXiv 1409.0473","https://arxiv.org/abs/1409.0473"],
+"ResNet":["arXiv 1512.03385","https://arxiv.org/abs/1512.03385"],
+"U-Net":["arXiv 1505.04597","https://arxiv.org/abs/1505.04597"],
+"NF":["ICML 2015","https://proceedings.mlr.press/v37/rezende15.html"],
+"AlphaGo / AlphaZero":["Nature 2016","https://www.nature.com/articles/nature16961"],
+"GNN":["arXiv 1609.02907","https://arxiv.org/abs/1609.02907"],
+"Transformer":["arXiv 1706.03762","https://arxiv.org/abs/1706.03762"],
+"MoE":["arXiv 1701.06538","https://arxiv.org/abs/1701.06538"],
+"VQ-VAE":["arXiv 1711.00937","https://arxiv.org/abs/1711.00937"],
+"CapsNet":["arXiv 1710.09829","https://arxiv.org/abs/1710.09829"],
+"PPO":["arXiv 1707.06347","https://arxiv.org/abs/1707.06347"],
+"BERT":["arXiv 1810.04805","https://arxiv.org/abs/1810.04805"],
+"GPT":["OpenAI 2018","https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf"],
+"StyleGAN":["arXiv 1812.04948","https://arxiv.org/abs/1812.04948"],
+"Neural ODE":["arXiv 1806.07366","https://arxiv.org/abs/1806.07366"],
+"T5":["arXiv 1910.10683","https://arxiv.org/abs/1910.10683"],
+"DDPM":["arXiv 2006.11239","https://arxiv.org/abs/2006.11239"],
+"ViT":["arXiv 2010.11929","https://arxiv.org/abs/2010.11929"],
+"NeRF":["arXiv 2003.08934","https://arxiv.org/abs/2003.08934"],
+"SSL speech":["arXiv 2006.11477","https://arxiv.org/abs/2006.11477"],
+"CLIP":["arXiv 2103.00020","https://arxiv.org/abs/2103.00020"],
+"Swin":["arXiv 2103.14030","https://arxiv.org/abs/2103.14030"],
+"S4":["arXiv 2111.00396","https://arxiv.org/abs/2111.00396"],
+"AlphaFold 2":["Nature 2021","https://www.nature.com/articles/s41586-021-03819-2"],
+"LDM":["arXiv 2112.10752","https://arxiv.org/abs/2112.10752"],
+"RLHF":["arXiv 2203.02155","https://arxiv.org/abs/2203.02155"],
+"MLLM":["arXiv 2204.14198","https://arxiv.org/abs/2204.14198"],
+"FlashAttention":["arXiv 2205.14135","https://arxiv.org/abs/2205.14135"],
+"DiT":["arXiv 2212.09748","https://arxiv.org/abs/2212.09748"],
+"Flow matching":["arXiv 2210.02747","https://arxiv.org/abs/2210.02747"],
+"3DGS":["arXiv 2308.04079","https://arxiv.org/abs/2308.04079"],
+"Mamba":["arXiv 2312.00752","https://arxiv.org/abs/2312.00752"],
+"RWKV / RetNet":["arXiv 2305.13048","https://arxiv.org/abs/2305.13048"],
+"VLA":["arXiv 2307.15818","https://arxiv.org/abs/2307.15818"],
+"Fine-grained MoE":["arXiv 2401.06066","https://arxiv.org/abs/2401.06066"],
+"MLA":["arXiv 2405.04434","https://arxiv.org/abs/2405.04434"],
+"Hybrid SSM":["arXiv 2403.19887","https://arxiv.org/abs/2403.19887"],
+"Test-time compute":["OpenAI 2024","https://openai.com/index/learning-to-reason-with-llms/"],
+"BLT":["arXiv 2412.09871","https://arxiv.org/abs/2412.09871"],
+"JEPA":["Meta AI 2024","https://ai.meta.com/blog/v-jepa-yann-lecun-ai-model-video-joint-embedding-predictive-architecture/"],
+"MoD":["arXiv 2404.02258","https://arxiv.org/abs/2404.02258"],
+"World model":["arXiv 2402.15391","https://arxiv.org/abs/2402.15391"],
+"KAN":["arXiv 2404.19756","https://arxiv.org/abs/2404.19756"],
+"GRPO":["arXiv 2501.12948","https://arxiv.org/abs/2501.12948"],
+"NSA / DSA":["arXiv 2502.11089","https://arxiv.org/abs/2502.11089"],
+"Gated DeltaNet":["arXiv 2412.06464","https://arxiv.org/abs/2412.06464"],
+"dLLM":["arXiv 2502.09992","https://arxiv.org/abs/2502.09992"],
+"Titans":["arXiv 2501.00663","https://arxiv.org/abs/2501.00663"],
+"Dual-system VLA":["arXiv 2504.16054","https://arxiv.org/abs/2504.16054"],
+"AR image gen":["OpenAI 2025","https://openai.com/index/introducing-4o-image-generation/"],
+"TRM / HRM":["arXiv 2510.04871","https://arxiv.org/abs/2510.04871"],
+"Engram":["DeepSeek 2026","https://www.marktechpost.com/2026/01/14/deepseek-ai-researchers-introduce-engram-a-conditional-memory-axis-for-sparse-llms/"],
+"Mamba-3":["arXiv 2603.15569","https://arxiv.org/abs/2603.15569"]
+};
+
+const eraEl = document.getElementById('eras');
+const rowsEl = document.getElementById('rows');
+const qEl = document.getElementById('q');
+const sortEl = document.getElementById('sort');
+const resetEl = document.getElementById('reset');
+const countEl = document.getElementById('count');
+const mileEl = document.getElementById('mile');
+
+let activeEra = 0;
+let asc = true;
+let mileOnly = false;
+
+ERAS.forEach(e => {
+  const n = D.filter(d => d[0] === e.id).length;
+  const b = document.createElement('button');
+  b.className = 'era hue' + e.id;
+  b.type = 'button';
+  b.dataset.era = e.id;
+  b.innerHTML = '<span class="rule"></span><span class="era-tick"></span>' +
+    '<span class="era-inner"><span class="era-name">' + e.name + '</span>' +
+    '<span class="era-years">' + e.years + ' &middot; <span class="era-count">' + n + '</span></span></span>';
+  b.addEventListener('click', () => {
+    activeEra = (activeEra === e.id) ? 0 : e.id;
+    paintEras();
+    paintTimeline();
+    render();
+  });
+  eraEl.appendChild(b);
+});
+
+function paintEras(){
+  [...eraEl.children].forEach(b => {
+    const on = activeEra === Number(b.dataset.era);
+    b.classList.toggle('on', on);
+    b.classList.toggle('dim', activeEra !== 0 && !on);
+    b.setAttribute('aria-pressed', String(on));
+  });
+}
+
+function render(){
+  const q = qEl.value.trim().toLowerCase();
+  let list = D.filter(d => {
+    if (activeEra && d[0] !== activeEra) return false;
+    if (mileOnly && !MILE.has(d[2])) return false;
+    if (!q) return true;
+    const hay = (d[2] + ' ' + d[3] + ' ' + d[4] + ' ' + d[5] + ' ' + d[6] + ' ' +
+      d[7].map(x => x[0] + ' ' + x[1]).join(' ') + ' ' + d[8] + ' ' + d[9] + ' ' + d[1]).toLowerCase();
+    return hay.includes(q);
+  });
+
+  list = list.slice().sort((a, b) => asc ? (a[1] - b[1] || a[0] - b[0]) : (b[1] - a[1] || b[0] - a[0]));
+
+  rowsEl.innerHTML = '';
+  if (!list.length){
+    rowsEl.innerHTML = '<tr><td class="empty" colspan="9">No architecture matches that. Try a lab name, a use case, or clear the filters.</td></tr>';
+    countEl.textContent = '0 of ' + D.length;
+    return;
+  }
+
+  let lastEra = null;
+  const frag = document.createDocumentFragment();
+
+  list.forEach(d => {
+    const era = ERAS.find(e => e.id === d[0]);
+    if (d[0] !== lastEra){
+      const hr = document.createElement('tr');
+      hr.className = 'era-row hue' + era.id;
+      hr.innerHTML = '<td colspan="9">' + era.name + ' <span>&mdash; ' + era.years + '</span></td>';
+      frag.appendChild(hr);
+      lastEra = d[0];
+    }
+    const tr = document.createElement('tr');
+    tr.className = 'hue' + era.id;
+    const ex = d[7].map(x => '<li><b>' + x[0] + '</b><span>' + x[1] + '</span></li>').join('');
+    const src = SRC[d[2]];
+    const star = MILE.has(d[2]) ? '<span class="star" title="Major milestone">&#9670;</span>' : '';
+    tr.innerHTML =
+      '<td class="c-year" data-label="Year">' + d[1] + '</td>' +
+      '<td class="c-name" data-label="Architecture"><span class="abbr">' + star + d[2] + '</span><span class="full">' + d[3] + '</span></td>' +
+      '<td data-label="How it works">' + d[4] + '</td>' +
+      '<td data-label="Breakthrough">' + d[5] + '</td>' +
+      '<td data-label="Mainly used for">' + d[6] + '</td>' +
+      '<td data-label="Examples"><ul class="ex">' + ex + '</ul></td>' +
+      '<td class="c-pro" data-label="Advantage"><span class="sign">+</span>' + d[8] + '</td>' +
+      '<td class="c-con" data-label="Drawback"><span class="sign">−</span>' + d[9] + '</td>' +
+      '<td class="c-src" data-label="Source"><a href="' + src[1] + '" target="_blank" rel="noopener">' + src[0] + '</a></td>';
+    frag.appendChild(tr);
+  });
+
+  rowsEl.appendChild(frag);
+  countEl.textContent = list.length + ' of ' + D.length + ' shown';
+}
+
+/* ---------- milestone timeline ---------- */
+function buildTimeline(){
+  const svg = document.getElementById('tl');
+  const W = 1200, H = 520, padL = 40, padR = 40, INNER = W - padL - padR;
+
+  // Two tracks with a deliberate scale break: half the milestones land after 2012,
+  // so a single linear axis would pile them all into the last sixth of the width.
+  const TRACKS = [
+    { from:1955, to:2012, spine:118, axisY:24,  gridA:32,  gridB:186,
+      grid:[1960,1970,1980,1990,2000,2010],
+      top:[96,56], bot:[160],
+      cap:'1955–2012 · 57 years',
+      keep:d => d[1] < 2013 },
+    { from:2012, to:2027, spine:398, axisY:240, gridA:248, gridB:534,
+      grid:[2014,2016,2018,2020,2022,2024,2026],
+      top:[376,336], bot:[441,481],
+      cap:'2013–2026 · 14 years, same width',
+      keep:d => d[1] >= 2013, now:true }
+  ];
+
+  const all = D.filter(d => MILE.has(d[2])).sort((a, b) => a[1] - b[1]);
+  let s = '';
+  const placed = [];
+
+  TRACKS.forEach(t => {
+    const X = y => padL + (y - t.from) / (t.to - t.from) * INNER;
+
+    t.grid.forEach(y => {
+      const gx = X(y);
+      s += '<line x1="' + gx + '" y1="' + t.gridA + '" x2="' + gx + '" y2="' + t.gridB +
+           '" stroke-dasharray="2 5" style="stroke:var(--line)" stroke-width="1"/>' +
+           '<text class="tl-axis" x="' + gx + '" y="' + t.axisY + '" text-anchor="middle" style="fill:var(--ink-3)">' + y + '</text>';
+    });
+
+    s += '<line x1="' + padL + '" y1="' + t.spine + '" x2="' + (W - padR) + '" y2="' + t.spine +
+         '" style="stroke:var(--ink-3)" stroke-width="1.5"/>' +
+         '<text class="tl-axis" x="' + padL + '" y="' + (t.spine + 17) + '" style="fill:var(--ink-3)">' + t.cap + '</text>';
+    if (t.now){
+      s += '<text class="tl-axis" x="' + (W - padR) + '" y="' + (t.spine - 10) + '" text-anchor="end" style="fill:var(--ink-3)">now</text>';
+    }
+
+    const lanes = { top: t.top.map(() => []), bot: t.bot.map(() => []) };
+    const n = Math.max(t.top.length, t.bot.length);
+
+    all.filter(t.keep).forEach(d => {
+      const w = Math.max(58, d[2].length * 7.1 + 8);
+      const cx = X(d[1]);
+      const x = Math.min(W - padR - w / 2, Math.max(padL + w / 2, cx));
+      let put = null;
+      for (let i = 0; i < n && !put; i++){
+        for (const side of ['top','bot']){
+          const lane = lanes[side][i];
+          if (!lane) continue;
+          const free = lane.every(o => (x + w/2 + 18) < (o.x - o.w/2) || (x - w/2 - 18) > (o.x + o.w/2));
+          if (free){ lane.push({x, w}); put = {side, i}; break; }
+        }
+      }
+      if (!put){ put = {side:'bot', i:t.bot.length - 1}; lanes.bot[put.i].push({x, w}); }
+      placed.push({d, cx, x, spine:t.spine,
+        nameY: put.side === 'top' ? t.top[put.i] : t.bot[put.i] + 14,
+        yearY: put.side === 'top' ? t.top[put.i] - 13 : t.bot[put.i],
+        jogY:  put.side === 'top' ? t.top[put.i] + 7  : t.bot[put.i] - 10});
+    });
+  });
+
+  s += '<line x1="' + padL + '" y1="214" x2="' + (W - padR) + '" y2="214" stroke-dasharray="1 7" style="stroke:var(--line)" stroke-width="1"/>';
+
+  placed.forEach(p => {
+    const era = ERAS.find(e => e.id === p.d[0]);
+    const hue = 'var(' + era.v + ')';
+    s += '<g class="tl-node" tabindex="0" role="button" data-k="' + p.d[2] + '" data-era="' + era.id +
+         '" aria-label="' + p.d[1] + ' ' + p.d[2] + '. Show in table.">' +
+         '<path d="M ' + p.cx + ' ' + p.spine + ' V ' + p.jogY + ' H ' + p.x + '" fill="none" style="stroke:' + hue + '" stroke-width="1.2" stroke-opacity=".55"/>' +
+         '<circle class="tl-dot" cx="' + p.cx + '" cy="' + p.spine + '" r="5" style="fill:' + hue + ';stroke:var(--surface)" stroke-width="2"/>' +
+         '<text class="tl-year" x="' + p.x + '" y="' + p.yearY + '" text-anchor="middle" style="fill:' + hue + '">' + p.d[1] + '</text>' +
+         '<text class="tl-name" x="' + p.x + '" y="' + p.nameY + '" text-anchor="middle" style="fill:var(--ink)">' + p.d[2] + '</text>' +
+         '</g>';
+  });
+
+  svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+  svg.innerHTML = s;
+
+  svg.querySelectorAll('.tl-node').forEach(g => {
+    const go = () => {
+      qEl.value = g.dataset.k;
+      activeEra = 0;
+      mileOnly = false;
+      mileEl.classList.remove('on');
+      mileEl.setAttribute('aria-pressed', 'false');
+      paintEras();
+      paintTimeline();
+      render();
+      document.querySelector('.scroller').scrollIntoView({behavior:'smooth', block:'start'});
+    };
+    g.addEventListener('click', go);
+    g.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); }
+    });
+  });
+}
+
+// Show or hide milestones when an era is picked. The layout is computed once
+// from all 23, so nothing moves, shifts or rescales: nodes only appear and disappear.
+function paintTimeline(){
+  document.querySelectorAll('.tl-node').forEach(g => {
+    g.classList.toggle('tl-off', !!activeEra && Number(g.dataset.era) !== activeEra);
+  });
+}
+
+qEl.addEventListener('input', render);
+mileEl.addEventListener('click', () => {
+  mileOnly = !mileOnly;
+  mileEl.classList.toggle('on', mileOnly);
+  mileEl.setAttribute('aria-pressed', String(mileOnly));
+  render();
+});
+sortEl.addEventListener('click', () => {
+  asc = !asc;
+  sortEl.innerHTML = asc ? 'Sort: oldest first &darr;' : 'Sort: newest first &uarr;';
+  render();
+});
+resetEl.addEventListener('click', () => {
+  qEl.value = '';
+  activeEra = 0;
+  asc = true;
+  mileOnly = false;
+  mileEl.classList.remove('on');
+  mileEl.setAttribute('aria-pressed', 'false');
+  sortEl.innerHTML = 'Sort: oldest first &darr;';
+  paintEras();
+  paintTimeline();
+  render();
+});
+
+paintEras();
+buildTimeline();
+paintTimeline();
+render();
+</script>
+
+</body>
+</html>
