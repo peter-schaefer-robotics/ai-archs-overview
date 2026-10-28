@@ -2,7 +2,7 @@
 
 **[▶ Open the live page](https://peter-schaefer-robotics.github.io/ai-archs-overview/)**
 
-[![Screenshot of the live page](media/screenshot.png)](https://peter-schaefer-robotics.github.io/ai-archs-overview/)
+[![Screenshot of the live page](./screenshot.png)](https://peter-schaefer-robotics.github.io/ai-archs-overview/)
 
 A reference table of 69 AI model architectures in the order they arrived, from the
 1943 McCulloch-Pitts neuron to the 2026 frontier.
